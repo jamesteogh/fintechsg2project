@@ -7,6 +7,7 @@ b2.addEventListener("click", () => {
     .then((response) => {
       for (i = 0; i < 2; i++) {
       let text = `Hello, ${response[i].first_name}!`;
-      $(".mypanel").html(text);
+    $(".mypanel").html(text);
+
     }});
 });
