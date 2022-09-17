@@ -7,6 +7,8 @@ let app=express();
 app.use(express.json()); //Use JSON parser to extract data in JSON format
 
 app.use(api.router);
+//app.use(router1);  for e.g. trigger Auth0 
+//app.use(router2);
 
 app.listen(3000,(error)=> {
     if(error){
