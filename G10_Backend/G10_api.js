@@ -70,15 +70,15 @@ router.get("/expenses/all", (request, response) => {
 // To edit transaction
 router.put("/expenses/by-transaction_id", (request,response) => { 
 
-    let d1 = (request.query.transaction_id);
-    let d2 = (request.query.date); 
-    let d3 = (request.query.item); 
-    let d4 = (request.query.amount);
-    let d5 = (request.query.category);  
-    let d6 = (request.query.notes); 
+    let d1 = (request.body.d_transactionid);
+    let d2 = (request.body.d_date); 
+    let d3 = (request.body.d_item); 
+    let d4 = (request.body.d_amount);
+    let d5 = (request.body.d_category);  
+    let d6 = (request.body.d_notes); 
 
     mysqlConnection.query(
-        `update expenses set Date=${d2}, item=${d3}, amount=${d4}, category=${d5}, notes=${d6} where transaction_id=${d1}`,  // UPDATE (*** Code needs to be amended *****)
+        `update expenses set Date='${d2}', item='${d3}', amount=${d4}, category='${d5}', notes='${d6}' where transaction_id=${d1}`,  // UPDATE (*** Code needs to be amended *****)
         (errors, results) => {
             if (errors) {
                 console.log(errors);
