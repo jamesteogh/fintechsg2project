@@ -78,7 +78,7 @@ router.put("/expenses/by-transaction_id", (request,response) => {
     let d6 = (request.body.d_notes); 
 
     mysqlConnection.query(
-        `update expenses set Date='${d2}', item='${d3}', amount=${d4}, category='${d5}', notes='${d6}' where transaction_id=${d1}`,  // UPDATE (*** Code needs to be amended *****)
+        `update expenses set Date='${d2}', item='${d3}', amount=${d4}, category='${d5}', notes='${d6}' where transaction_id=${d1}`,  // UPDATE 
         (errors, results) => {
             if (errors) {
                 console.log(errors);
